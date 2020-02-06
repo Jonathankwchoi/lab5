@@ -6,11 +6,12 @@ exports.addFriend = function(request, response) { 
 	var descriptionToAdd = request.query.description;
 	var imageURLToAdd = "http://lorempixel.com/400/400/people";
 	console.log(nameToAdd+" " + descriptionToAdd + " " + imageURLToAdd);
-	response.render('index.handlebars');
+	
 	var newFriend = {
 		"name": nameToAdd,
 		"description": descriptionToAdd,
 		"imageURL": imageURLToAdd
 	}
 	data.friends.push(newFriend);
+	response.render('index', data);
  }
