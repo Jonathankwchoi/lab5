@@ -5,39 +5,50 @@ $(document).ready(function() {
 	initializePage();
 })
 
+
+
 /*
  * Function that is called when the document is ready.
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	$(".names").click(anagrammedName);
 }
 
-function anagrammedName(name) {
+/*function justToSeeIfThisWorks(e){
+	e.preventDefault();
+	console.log("This works");
+}*/
+
+function anagrammedName(e) {
 	// Thanks, Internet Anagram Server!
+	e.preventDefault();
+	name = $(this).text();
+	//console.log(name);
 	
 	if (name == "Doug Engelbart") {
-		return "Notable Grudge";
+		$(this).text("Notable Grudge");
 	} 
 	else if (name == "Ivan Sutherland") {
-		return "Vandal Heist Run";
+		$(this).text("Vandal Heist Run");
 	}
 	else if (name == "JCR Licklider") {
-		return "Crick Rid Jell";
+		$(this).text("Crick Rid Jell");
 	}
 	else if (name == "Vannevar Bush") {
-		return "Ravens Van Hub";
+		$(this).text("Ravens Van Hub");
 	}
 	else if (name == "Alan C. Kay") {
-		return "Canal Yak";
+		$(this).text("Canal Yak");
 	}
 	else if (name == "Allen Newell") {
-		return "Ellen All New";
+		$(this).text("Ellen All New");
 	}
 	else if (name == "Lucy Suchman") {
-		return "Lunacy Chums";
+		$(this).text("Lunacy Chums");
 	}
 	else if (name == "Grace Hopper") {
-		return "Gear Chopper";
+		$(this).text("Gear Chopper");
 	}
 	else {
 		console.log(name + " not known for anagramming.");
